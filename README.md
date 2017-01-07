@@ -13,7 +13,7 @@ Submitted by: Athota Madhuri
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/amadhuri/XYZReader/blob/master/snapshot.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/amadhuri/XYZReader/blob/master/screenshot.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

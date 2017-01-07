@@ -64,9 +64,6 @@ public class ArticleDetailActivity extends AppCompatActivity
             @Override
             public void onPageScrollStateChanged(int state) {
                 super.onPageScrollStateChanged(state);
-                /*mUpButton.animate()
-                        .alpha((state == ViewPager.SCROLL_STATE_IDLE) ? 1f : 0f)
-                        .setDuration(300);*/ //mad commented
             }
 
             @Override
@@ -74,24 +71,8 @@ public class ArticleDetailActivity extends AppCompatActivity
                 if (mCursor != null) {
                     mCursor.moveToPosition(position);
                 }
-               /* mSelectedItemId = mCursor.getLong(ArticleLoader.Query._ID);
-                updateUpButtonPosition();*/ //mad commented
             }
         });
-
-        //mUpButtonContainer = findViewById(R.id.up_container);
-
-       // mUpButton = findViewById(R.id.action_up); //mad commented
-        /*mUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onSupportNavigateUp();
-            }
-        });*/
-
-        //final Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
-        //setSupportActionBar(toolbar);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         if (savedInstanceState == null) {
             if (getIntent() != null && getIntent().getData() != null) {
@@ -149,8 +130,7 @@ public class ArticleDetailActivity extends AppCompatActivity
     }
 
     private void updateUpButtonPosition() {
-    /*    int upButtonNormalBottom = mTopInset + mUpButton.getHeight();
-        mUpButton.setTranslationY(Math.min(mSelectedItemUpButtonFloor - upButtonNormalBottom, 0));*/
+
     }
 
     private class MyPagerAdapter extends FragmentStatePagerAdapter {

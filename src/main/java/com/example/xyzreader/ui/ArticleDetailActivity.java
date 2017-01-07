@@ -87,7 +87,7 @@ public class ArticleDetailActivity extends AppCompatActivity
             public void onClick(View view) {
                 onSupportNavigateUp();
             }
-        });*///mad commented
+        });*/
 
         //final Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
         //setSupportActionBar(toolbar);
@@ -150,7 +150,7 @@ public class ArticleDetailActivity extends AppCompatActivity
 
     private void updateUpButtonPosition() {
     /*    int upButtonNormalBottom = mTopInset + mUpButton.getHeight();
-        mUpButton.setTranslationY(Math.min(mSelectedItemUpButtonFloor - upButtonNormalBottom, 0));*/ //mad commented
+        mUpButton.setTranslationY(Math.min(mSelectedItemUpButtonFloor - upButtonNormalBottom, 0));*/
     }
 
     private class MyPagerAdapter extends FragmentStatePagerAdapter {

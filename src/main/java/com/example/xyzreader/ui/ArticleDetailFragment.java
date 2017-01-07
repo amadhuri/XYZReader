@@ -115,18 +115,8 @@ public class ArticleDetailFragment extends Fragment implements
             public void onInsetsChanged(Rect insets) {
                 mTopInset = insets.top;
             }
-        });*///mad commented
+        });*/
 
-        /*mScrollView = (ObservableScrollView) mRootView.findViewById(R.id.scrollview);
-        mScrollView.setCallbacks(new ObservableScrollView.Callbacks() {
-            @Override
-            public void onScrollChanged() {
-                mScrollY = mScrollView.getScrollY();
-                getActivityCast().onUpButtonFloorChanged(mItemId, ArticleDetailFragment.this);
-                mPhotoContainerView.setTranslationY((int) (mScrollY - mScrollY / PARALLAX_FACTOR));
-                updateStatusBar();
-            }
-        });*/ //mad commented
 
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
         //mPhotoContainerView = mRootView.findViewById(R.id.photo_container);
@@ -189,9 +179,9 @@ public class ArticleDetailFragment extends Fragment implements
             return;
         }
 
-       // TextView titleView = (TextView) mRootView.findViewById(R.id.article_title); //mad commented
-        TextView bylineView = (TextView) mRootView.findViewById(R.id.toolbar_text_sub_title);//mad commented
-        //bylineView.setMovementMethod(new LinkMovementMethod());//mad commented
+
+        TextView bylineView = (TextView) mRootView.findViewById(R.id.toolbar_text_sub_title);
+
         TextView bodyView = (TextView) mRootView.findViewById(R.id.article_body);
         Typeface rosarioFont = Typeface.createFromAsset(getResources().getAssets(), "Rosario-Regular.ttf");
         bodyView.setTypeface(rosarioFont);
@@ -202,6 +192,7 @@ public class ArticleDetailFragment extends Fragment implements
             mRootView.animate().alpha(1);
 
             CharSequence title = mCursor.getString(ArticleLoader.Query.TITLE);
+
             Typeface robotoRegularFont = Typeface.createFromAsset(getResources().getAssets(), "Roboto-Regular.ttf");
 
             Typeface robotoFont = Typeface.createFromAsset(getResources().getAssets(), "RobotoCondensed-Bold.ttf");
@@ -240,9 +231,6 @@ public class ArticleDetailFragment extends Fragment implements
 
                         }
                     });
-        } else {
-            mRootView.setVisibility(View.GONE);
-            bodyView.setText("N/A");
         }
     }
 
@@ -259,7 +247,6 @@ public class ArticleDetailFragment extends Fragment implements
             }
             return;
         }
-
         mCursor = cursor;
         if (mCursor != null && !mCursor.moveToFirst()) {
             Log.e(TAG, "Error reading item detail cursor");
@@ -277,17 +264,10 @@ public class ArticleDetailFragment extends Fragment implements
     }
 
     public int getUpButtonFloor() {
-        /*if (mPhotoContainerView == null || mPhotoView.getHeight() == 0) {
-            return Integer.MAX_VALUE;
-        }*///mad commented
-
-        if (mPhotoView==null || mPhotoView.getHeight() == 0) //mad added
+         if (mPhotoView==null || mPhotoView.getHeight() == 0) //mad added
             return Integer.MAX_VALUE;
 
         // account for parallax
-        /*return mIsCard
-                ? (int) mPhotoContainerView.getTranslationY() + mPhotoView.getHeight() - mScrollY
-                : mPhotoView.getHeight() - mScrollY;*///mad commented
 
         return mIsCard
                 ? mPhotoView.getHeight() - mScrollY
